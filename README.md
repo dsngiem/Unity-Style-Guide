@@ -401,7 +401,7 @@ Within each of these groups order by access:
 * internal
 * protected
 * private
-```
+```C#
 namespace ProjectName
 {
 	/// <summary>  
@@ -466,7 +466,7 @@ Use a namespace to ensure your scoping of classes/enum/interface/etc won't confl
 
 Simply, any function that has an access modifier of Public should have its summary filled out. 
 
-```
+```C#
 /// <summary>
 /// Fire a gun
 /// </summary>
@@ -486,7 +486,7 @@ To create Foldout Groups there are 2 options in Unity.
 * The first is to define a `[Serializable] public Class` inside the main class however this can have a performance impact. This allows the use of the same variable name to be shared.
 * The second option is to use the Foldout Group Attribute available with [Odin Inspector](https://odininspector.com/).
 
-```
+```C#
 [[Serializable](https://docs.unity3d.com/ScriptReference/Serializable.html)]
 public struct PlayerStats
 	{
@@ -513,14 +513,14 @@ End comment text with a period.
 Insert one space between the comment delimiter (//) and the comment text, as shown in the following example.
 
 The // (two slashes) style of comment tags should be used in most situations. Where ever possible, place comments above the code instead of beside it. Here are some examples:
-```
+```C#
         // Sample comment above a variable.
         private int _myInt = 5;
 ```
 
 #### Regions
 The `#region` directive enables you to collapse and hide sections of code in C# files. The ability to hide code selectively makes your files more manageable and easier to read. 
-```
+```C#
 #region "This is the code to be collapsed"
     Private components As System.ComponentModel.Container
 #endregion
@@ -590,7 +590,7 @@ Local variables should use camelCase.
 
 ###### Implicitly Typed Local Variables
 Use implicit typing for local variables when the type of the variable is obvious from the right side of the assignment, or when the precise type is not important.
-```
+```C#
 var var1 = "This is clearly a string.";
 var var2 = 27;
 var var3 = Convert.ToInt32(Console.ReadLine());
@@ -600,7 +600,7 @@ for (var i = 0; i < bountyHunterFleets.Length; ++i) {};
 
 Do not use var when the type is not apparent from the right side of the assignment.
 Example
-```
+```C#
 int var4 = ExampleClass.ResultSoFar();
 ```
 
@@ -612,7 +612,7 @@ Unless it is known that a variable should only be accessed within the class it i
 
 ##### Do _Not_ use Hungarian notation
 Do _not_ use Hungarian notation or any other type identification in identifiers
-```
+```C#
 // Correct
 int counter;
 string name;
@@ -659,7 +659,7 @@ Example: When defining a weapon, do **not** use `isReloading` and `isEquipping` 
 Enums use PascalCase and use singular names for enums and their values. Exception: bit field enums should be plural. Enums can be placed outside the class space to provide global access.
 
 Example: 
-```
+```C#
 public enum WeaponType
 {
     Knife,
@@ -685,7 +685,9 @@ Example: Use `Targets`, `Hats`, and `EnemyPlayers`, not `TargetList`, `HatArray`
 ##### Interfaces
 Interfaces are led with a capital `I` then followed with PascalCase.
 
-Example: ```public interface ICanEat { }```
+Example: ```C#
+public interface ICanEat { }
+```
 
 <a name="functions"></a>
 ### 3.4 Functions, Events, and Event Dispatchers
@@ -1054,13 +1056,13 @@ https://learn.unity.com/project/3ds-max-to-unity-pipeline
 
 #### Setting up 3ds Max
 
-Unity uses 1 unit = 1 meter. Setup 3ds Max to use Meters by going to ```Customize/Units Setup/System Unit Setup``` and set to 1 Unit = 1 Meter. Using the correct scale is very important for correct Physics / GI / and VR interaction.
+Unity uses 1 unit = 1 meter. Setup 3ds Max to use Meters by going to `Customize/Units Setup/System Unit Setup` and set to 1 Unit = 1 Meter. Using the correct scale is very important for correct Physics / GI / and VR interaction.
 
-Animation frame rate in 3ds Max should be set to 30fps. The ```Time Configuration``` dialog box has 3ds Max's FPS settings
+Animation frame rate in 3ds Max should be set to 30fps. The `Time Configuration` dialog box has 3ds Max's FPS settings
 
 ##### Working with Small Objects
 
-* Set ```Customize > Customize User Interface > Mouse Wheel Zoom Increment``` to 0.1m to stop over zooming
+* Set `Customize > Customize User Interface > Mouse Wheel Zoom Increment` to 0.1m to stop over zooming
 
 * Turn on Viewport Clipping and set the slider on the side of the viewport to be able to zoom in on small meshes. (https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/sfdcarticles/sfdcarticles/Viewport-Clipping.html)
 
@@ -1122,7 +1124,7 @@ Bind normal bones to the CAT rig for use in skinning and exporting
 
 ###### Bind Pose
 
-Set Motion Panel/Layer Manager/"Setup/Animation Mode" Toggle to ```Red```
+Set Motion Panel/Layer Manager/"Setup/Animation Mode" Toggle to `Red`
 Select only the bones and the mesh you wish to export
 Export naming: ModelName.FBX
 
@@ -1137,8 +1139,8 @@ The @ symbol is a special Unity naming convention allowing the animation to be b
 
 If importing only animation or bones from a FBX: 
 
-* Set ```Preserve Hierarchy Model``` import option to ```True```
-* Set ```Rig > Avatar Definition``` to ```Copy From Other Avatar```
+* Set `Preserve Hierarchy Model` import option to `True`
+* Set `Rig > Avatar Definition` to `Copy From Other Avatar`
 
 MaxListener Window, set width and height of selected bones, maybe objects too?
 $.width = 0.01
