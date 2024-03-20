@@ -659,6 +659,7 @@ Example: When defining a weapon, do **not** use `isReloading` and `isEquipping` 
 Enums use PascalCase and use singular names for enums and their values. Exception: bit field enums should be plural. Enums can be placed outside the class space to provide global access.
 
 Example: 
+
 ```C#
 public enum WeaponType
 {
@@ -685,7 +686,8 @@ Example: Use `Targets`, `Hats`, and `EnemyPlayers`, not `TargetList`, `HatArray`
 ##### Interfaces
 Interfaces are led with a capital `I` then followed with PascalCase.
 
-Example: ```C#
+Example: 
+```C#
 public interface ICanEat { }
 ```
 
